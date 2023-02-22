@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import SearchBox from "./SearchBox/SearchBox.js";
+import MovieList from "./MovieList/MovieList.js";
+import MovieDetails from "./MovieDetails/MovieDetails.js";
+import './App.css'
 
 function App() {
+  const [movies, setMovies] = useState([]);
+  const [selectedMovie, setSelectedMovie] = useState(null);
+
+  const handleSearch = (searchResults) => {
+    setMovies(searchResults);
+    setSelectedMovie(null);
+  };
+
+  const handleMovieClick = (movie) => {
+    setSelectedMovie(movie);
+  };
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <div>
+    <h1 className="Titulo">Ernesto Lopez Search IMDb</h1>
+    <SearchBox onSearch={handleSearch} />
+    {selectedMovie ? (
+      <MovieDetails movie={selectedMovie}  />
+    ) : (
+      <>
+        {movies.length > 0 ? (
+          <MovieList movies={movies} onMovieClick={handleMovieClick} />
+        ) : (
+          <p>Enter a search term to see results</p>
+        )}
+      </>
+    )}
+  </div>
+  )  
 }
 
 export default App;
