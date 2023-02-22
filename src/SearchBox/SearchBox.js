@@ -14,6 +14,7 @@ function SearchBox(props) {
         .then((response) => {return response.json()})
         .then((data) => {
             let datajson=JSON.parse(data)
+            console.log(datajson)
             props.onSearch(datajson.results);})
         .catch((error) => console.log(error));
     }

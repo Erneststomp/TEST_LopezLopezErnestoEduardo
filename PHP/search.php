@@ -5,7 +5,7 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 header('Content-Type: application/json');
 
 if (isset($_GET['searchTerm'])) {
-    $key='k_hm34g5w4';
+    $key='k_kfy9v832';
     $searchTerm = $_GET['searchTerm'];
     $url = "https://imdb-api.com/en/API/Search/$key/$searchTerm";
     $response = file_get_contents($url);

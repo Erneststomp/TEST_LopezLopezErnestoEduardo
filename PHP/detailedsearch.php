@@ -5,7 +5,7 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 header('Content-Type: application/json');
 
 if (isset($_GET['selectedMovie'])) {
-    $key='k_hm34g5w4';
+    $key='k_kfy9v832';
     $selectedMovie = $_GET['selectedMovie'];
     $urldetailed = "https://imdb-api.com/en/API/Title/$key/$selectedMovie/FullActor,FullCast,Posters,Images,Trailer,Ratings,Wikipedia,";
     $responsedetailed = file_get_contents($urldetailed);
