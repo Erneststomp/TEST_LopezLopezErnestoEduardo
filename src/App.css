@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: black;
 }
 
 .App-logo {
@@ -37,18 +38,58 @@
     transform: rotate(360deg);
   }
 }
- .Titulo{
+.TitleDiv{
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+.Titulo {
+  background-color: #F5C518;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Roboto', sans-serif;
-  font-size: 1.6rem;
-  line-height: 1.5;
-  color: #212121;
-  font-weight: 400;
- }
+  font-size: 2rem;
+  line-height: 1.2;
+  color: #000000;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  border-radius: 100px;
+  width: 75%;
+}
+
 
  .MainDiv{
   background-color: #4c4d5025;
  }
+
+ body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
+.app.center-search-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.activator-off{
+  padding-top: 50%;
+}
+@keyframes example {
+  from {
+    padding-top: 50%;
+  }
+  to {
+    padding-top: 0%;
+  }
+}
+
+.animate {
+  animation: example 3s forwards;
+}
