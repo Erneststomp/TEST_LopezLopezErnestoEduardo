@@ -79,11 +79,11 @@
   height: 100vh;
 }
 .activator-off{
-  padding-top: 50%;
+  padding-top: 30%;
 }
 @keyframes example {
   from {
-    padding-top: 50%;
+    padding-top: 30%;
   }
   to {
     padding-top: 0%;

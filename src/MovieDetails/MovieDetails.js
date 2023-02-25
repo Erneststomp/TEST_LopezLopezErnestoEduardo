@@ -27,20 +27,24 @@ function MovieDetails(props) {
     <div>
       <div className="movie">
         <div className="movie-poster">
-          {movieDetails && movieDetails.images.items && movieDetails.images.items.length > 0 && (
-            <>
-              <img className="DetailPoster" src={props.movie.image} alt={props.movie.title} />
-              {movieDetails.images.items.slice(0, 5).map((image, index) => (
-              <img
-                key={index}
-                className={`gallery-image ${index === currentImageIndex ? "active" : ""}`}
-                src={image.image}
-                alt={`${props.movie.title} imagen ${index}`}
-                onClick={() => handleImageChange(index)}
-              />
-            ))}
-            </>
-          )}
+          <div className="Poster">
+            <img className="DetailPoster" src={props.movie.image} alt={props.movie.title} />
+            </div>
+          <div className="Gallery">
+            {movieDetails && movieDetails.images.items && movieDetails.images.items.length > 0 && (
+              <div className="DetailGallery">
+                {movieDetails.images.items.slice(0, 5).map((image, index) => (
+                <img
+                  key={index}
+                  className={`gallery-image ${index === currentImageIndex ? "active" : ""}`}
+                  src={image.image}
+                  alt={`${props.movie.title} imagen ${index}`}
+                  onClick={() => handleImageChange(index)}
+                />
+              ))}
+              </div>
+            )}
+          </div>
         </div>
         <div className="movie-details">
           <h2 className="movie-title">{props.movie.title}</h2>

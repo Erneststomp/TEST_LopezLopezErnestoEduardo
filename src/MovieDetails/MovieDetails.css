@@ -15,14 +15,21 @@
   max-width: 50%;
   max-height: 100vh;
   justify-content: center;
+  flex-direction: column; 
   align-items: center;
   flex-wrap: wrap;
+  
 }
 .DetailPoster{
   max-width: 40vw;
   max-height: 75vh;
 }
-
+.DetailGallery{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 .movie-details {
   display: flex;
   width: 45vw;
@@ -47,6 +54,31 @@
   width: 100%;
 }
 
+
+.image-gallery {
+  display: flex;
+  padding: 10px;
+  max-width: 40vw;
+  max-height: 10vh;
+  flex-wrap: wrap;
+}
+
+.gallery-image {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  cursor: pointer;
+  object-fit: contain;
+}
+
+.gallery-image:last-of-type {
+  margin-right: 0;
+}
+
+.gallery-image.active {
+  border: 2px solid #fff;
+}
 @media only screen and (max-width: 600px) {
   .movie {
     flex-direction: column;
@@ -83,38 +115,14 @@
     display: flex;
     overflow-x: scroll;
     padding: 10px;
-    max-width: 20vw;
+    max-width: 10vw;
     max-height: 10vh;
   }
   .gallery-image {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
+    width: 20%;
+    height: 20%;
+    margin: auto;
     cursor: pointer;
   }
   
-}
-.image-gallery {
-  display: flex;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  padding: 10px;
-  max-width: 40vw;
-  max-height: 10vh;
-}
-
-.gallery-image {
-  width: 100px;
-  height: 100px;
-  margin-right: 10px;
-  cursor: pointer;
-}
-
-.gallery-image:last-of-type {
-  margin-right: 0;
-}
-
-.gallery-image.active {
-  border: 2px solid #fff;
 }
